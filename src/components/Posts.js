@@ -18,7 +18,7 @@ function Posts() {
   return (
     <Card>
       <Card.Body> 
-        <ul className="posts">
+      <ul className="posts">
          {posts.map((post) => (
            <li className="post" key={post.id}>
              <h4>{post.title}</h4>
@@ -26,7 +26,7 @@ function Posts() {
            </li>
          ))}
         </ul></Card.Body>
-    </Card>
+        </Card>
   );
 }  
 export default Posts;
