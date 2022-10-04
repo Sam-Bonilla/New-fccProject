@@ -16,17 +16,19 @@ function Posts() {
 
 
   return (
-    <Card>
-      <Card.Body> 
-        <ul className="posts">
+    
+      <ul className="posts">
          {posts.map((post) => (
+          <Card>
+          <Card.Body> 
            <li className="post" key={post.id}>
              <h4>{post.title}</h4>
              <p>{post.body}</p>
            </li>
+           </Card.Body>
+        </Card>
          ))}
-        </ul></Card.Body>
-    </Card>
+        </ul>
   );
 }  
 export default Posts;
