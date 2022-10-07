@@ -4,6 +4,8 @@ const initialState = {
   posts: [],
 };
 
+//Slices taken library project need to adapt them to posts
+
 const postsSlice = createSlice({
   name: 'posts',
   initialState,
