@@ -55,6 +55,7 @@ export function Counter() {
           Add Async
         </button>
       </div>
+      <button> <a href='src/components/Posts.js'>Posts</a> </button>
     </div>
   );
 }
