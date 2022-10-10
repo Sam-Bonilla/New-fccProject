@@ -1,5 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+// const postsSlice = 'postsSlice'
+
+// function Posts() {
+//   return {
+//     type: postsSlice
+//     info: PostsPage
+//   }
+// }
+
+
+
+
 const initialState = {
   posts: [],
 };
@@ -18,7 +30,6 @@ const postsSlice = createSlice({
     }
   },
 });
-
 
 
 export const { addPost, deletePosts } = postsSlice.actions;
