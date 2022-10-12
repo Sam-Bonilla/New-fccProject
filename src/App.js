@@ -11,6 +11,7 @@ function App() {
         <h1>React Posts Sharer</h1>
       </header>
       <Counter />
+      {/* <Posts /> */}
     </div>
   );
 }
