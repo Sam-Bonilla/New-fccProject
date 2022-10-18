@@ -1,9 +1,16 @@
-import React from "react";
+// import React from "react";
+import React, { useState } from 'react';
 import axios from "axios";
 import Card from 'react-bootstrap/Card';
+import { useSelector, useDispatch } from 'react-redux'
+import { addPosts, selectPosts } from './postsSlice'
 
 function Posts() {
   const [posts, setPosts] = React.useState([]);
+
+    const select = useSelector(selectPosts);
+    const dispatch = useDispatch(addPosts);
+  //   const [incrementAmount, setIncrementAmount] = useState('0');
 
   React.useEffect(() => {
     axios
