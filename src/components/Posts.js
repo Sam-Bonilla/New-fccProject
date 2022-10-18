@@ -9,6 +9,7 @@ import styles from './Counter.module.css';
 function Posts() {
   //const [posts, setPosts] = React.useState([]); 
 
+  
     const posts = useSelector(selectPosts);
     const dispatch = useDispatch();
     
