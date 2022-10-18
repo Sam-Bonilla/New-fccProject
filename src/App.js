@@ -10,7 +10,7 @@ function App() {
         <img src="/logo.svg" className="App-logo" alt="logo" />
         <h1>React Posts Sharer</h1>
       </header>
-      <Counter />
+      <Posts />
       {/* <Posts /> */}
     </div>
   );
