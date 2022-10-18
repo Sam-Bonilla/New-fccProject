@@ -10,6 +10,7 @@ function App() {
         <h1>React Posts Sharer</h1>
       </header>
       <Posts />
+      
     </div>
   );
 }
