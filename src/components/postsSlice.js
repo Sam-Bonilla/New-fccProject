@@ -10,7 +10,7 @@ const postsSlice = createSlice({
       },
       prepare: (text) => {
         const id = nanoid()
-        text = "This is test message";
+        text = "This is a test message";
         return { payload: { id, text } }
       },
     },
