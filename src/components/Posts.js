@@ -7,22 +7,22 @@ import { addPosts, selectPosts } from './postsSlice'
 import styles from './Counter.module.css';
 
 function Posts() {
-  //const [posts, setPosts] = React.useState([]); 
+  const [setPosts] = React.useState([]); 
 
   
     const posts = useSelector(selectPosts);
     const dispatch = useDispatch();
     
-  //   const [incrementAmount, setIncrementAmount] = useState('0');
+    // const [incrementAmount, setIncrementAmount] = useState('0');
 
-  // React.useEffect(() => {
-  //   axios
-  //     .get("http://jsonplaceholder.typicode.com/posts")
-  //     .then((response) => {
-  //       const firstTen=response.data.slice(0,10)
-  //       setPosts(firstTen)
-  //     })
-  // }, []);
+  React.useEffect(() => {
+    axios
+      .get("http://jsonplaceholder.typicode.com/posts")
+      .then((response) => {
+        const firstTen=response.data.slice(0,10)
+        setPosts(firstTen)
+      })
+  }, []);
 
 
   return (
@@ -40,7 +40,7 @@ function Posts() {
           <Card>
           <Card.Body> 
            <li className="post" key={post.id}>
-             {/* <h4>{post.title}</h4> */}
+             <h4>{post.title}</h4>
              <p>{post.text}</p>
            </li>
            </Card.Body>
