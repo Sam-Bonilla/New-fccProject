@@ -1,6 +1,5 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit'
-// import { type } from '@testing-library/user-event/dist/type';
-// import axios from "axios";
+
 
 const postsSlice = createSlice({
   name: 'Posts',
@@ -13,16 +12,10 @@ const postsSlice = createSlice({
       prepare: (text) => {
         const id = nanoid()
         text = "This is a test message";
-        return { payload: { id, text } }
-      },
-      Dispatch: (onClick) => {
-          const id = nanoid()
-          .get("http://jsonplaceholder.typicode.com/posts");
-          return { payload: { id,  } }
+        return { payload: { id, text } } },
         }
       },
     },
-  },
 )
 
 export const { addPosts } = postsSlice.actions
