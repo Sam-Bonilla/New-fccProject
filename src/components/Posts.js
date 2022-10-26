@@ -7,7 +7,7 @@ import { addPosts, selectPosts } from './postsSlice'
 import styles from './Counter.module.css';
 
 function Posts() {
-  const [setPosts] = React.useState([]); 
+  // const [posts, setPosts] = React.useState([]); 
 
   
     const posts = useSelector(selectPosts);
@@ -15,14 +15,14 @@ function Posts() {
     
     // const [incrementAmount, setIncrementAmount] = useState('0');
 
-  React.useEffect(() => {
-    axios
-      .get("http://jsonplaceholder.typicode.com/posts")
-      .then((response) => {
-        const firstTen=response.data.slice(0,10)
-        setPosts(firstTen)
-      })
-  }, []);
+  // React.useEffect(() => {
+  //   axios
+  //     .get("http://jsonplaceholder.typicode.com/posts")
+  //     .then((response) => {
+  //       const firstTen=response.data.slice(0,10)
+  //       setPosts(firstTen)
+  //     })
+  // }, []);
 
 
   return (
