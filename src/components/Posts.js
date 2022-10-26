@@ -4,7 +4,7 @@ import axios from "axios";
 import Card from 'react-bootstrap/Card';
 import { useSelector, useDispatch } from 'react-redux'
 import { addPosts, selectPosts } from './postsSlice'
-import styles from './Counter.module.css';
+import styles from './Posts.module.css';
 
 function Posts() {
   // const [posts, setPosts] = React.useState([]); 
