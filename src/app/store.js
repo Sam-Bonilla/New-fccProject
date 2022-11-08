@@ -15,14 +15,7 @@ export default configureStore({
     counter: counterReducer, 
     post: postsReducer,
       },
-    reducers: {
-      fetchData: (state, action) => {
-        return {
-          todos: action.payload
-        };
-      }
-    }
-  });
+    });
 
 
 
