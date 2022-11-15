@@ -1,43 +1,20 @@
 import { configureStore } from "@reduxjs/toolkit"
-import counterReducer from "../features/counter/counterSlice"
 import postsReducer from "../features/posts/postsSlice"
 import createSagaMiddleware from "redux-saga";
-import saga from "src/saga.js";
-import {
-  getDefaultMiddleware
-} from "@reduxjs/toolkit";
-
-// export default configureStore({
-//   reducer: {
-//     counter: counterReducer, 
-//     post: postsReducer,
-//   },
-// })
+import saga from "saga"; 
 
 let sagaMiddleware = createSagaMiddleware();
-const middleware = [...getDefaultMiddleware({ thunk: false }), sagaMiddleware];
 
-
-// let postsSlice = createSlice();
-
+// store confiuration
 const store = configureStore({
-  reducer: {
-    // post: postsSlice.reducer,
-    counter: counterReducer, 
+    reducer: {
     post: postsReducer,
   },
-  middleware,
-
-reducers: {
-  fetchData: (state, action) => {
-    return {
-      posts: action.payload
-    };
-  }
-}
+  middleware: (getDefaultMiddleware) =>
+  getDefaultMiddleware({
+    thunk: false,
+  }).concat (sagaMiddleware),
 });
-
-export const { fetchData } = postsReducer.actions; 
 
 sagaMiddleware.run(saga);
 

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { nanoid } from '@reduxjs/toolkit'
 
 import { postAdded } from './postsSlice'
+import {sagaActions} from 'sagaActions'
 
 export const AddPostForm = () => {
   const [title, setTitle] = useState('')
@@ -28,6 +29,13 @@ export const AddPostForm = () => {
     }
   }
 
+  const onGetPostClicked = () => {
+   
+      dispatch(
+        { type: sagaActions.FETCH_DATA_SAGA })
+    
+  }
+
   return (
     <section>
       <h2>Add a New Post</h2>
@@ -49,6 +57,9 @@ export const AddPostForm = () => {
         />
         <button type="button" onClick={onSavePostClicked}>
           Save Post
+        </button>
+        <button type="button" onClick={onGetPostClicked}>
+          Get Post
         </button>
       </form>
     </section>
