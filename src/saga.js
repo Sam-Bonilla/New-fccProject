@@ -1,7 +1,7 @@
 import { call, takeEvery, put } from "redux-saga/effects";
 import Axios from "axios";
-import { fetchData } from "./store";
-import { sagaActions } from "./sagaActions";
+import { fetchData } from "src/app/store.js"; 
+import { sagaActions } from "../sagaActions";
 
 let callAPI = async ({ url, method, data }) => {
   return await Axios({

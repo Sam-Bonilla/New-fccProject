@@ -1,10 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../features/counter/counterSlice'
-import postsReducer from '../features/posts/postsSlice'
+import { configureStore } from "@reduxjs/toolkit"
+import counterReducer from "../features/counter/counterSlice"
+import postsReducer from "../features/posts/postsSlice"
 import createSagaMiddleware from "redux-saga";
-import saga from "./src/saga.js";
+import saga from "src/saga.js";
 import {
-  // createSlice,
   getDefaultMiddleware
 } from "@reduxjs/toolkit";
 
@@ -27,8 +26,18 @@ const store = configureStore({
     counter: counterReducer, 
     post: postsReducer,
   },
-  middleware
+  middleware,
+
+reducers: {
+  fetchData: (state, action) => {
+    return {
+      posts: action.payload
+    };
+  }
+}
 });
+
+export const { fetchData } = postsReducer.actions; 
 
 sagaMiddleware.run(saga);
 
