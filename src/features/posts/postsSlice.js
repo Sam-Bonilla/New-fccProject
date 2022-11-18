@@ -13,7 +13,7 @@ const postsSlice = createSlice({
       state.push(action.payload)
     },
     fetchData(state, action){
-      state.push(action.payload)
+      state.push(...action.payload)
     }
   },
 })
